@@ -4,7 +4,7 @@ const config = {
   type: Phaser.AUTO,
   width: 512,
   height: 512,
-  backgroundColor: '#333',
+  backgroundColor: '#666',
   parent: 'survival-game',
   scene: [MainScene],
   scale: 2,

@@ -1,3 +1,5 @@
+import Player from "./Player.js";
+
 export default class MainScene extends Phaser.Scene{
   constructor(){
     super("MainScene");
@@ -5,14 +7,24 @@ export default class MainScene extends Phaser.Scene{
 
   preload(){
     console.log('PRELOAD');
-    this.load.atlas('male', 'assets/images/male.png', 'assets/images/male_atlas.json');
+    Player.preload(this);
+    this.load.image('tiles', 'assets/images/RPG Nature Tileset.png');
+    this.load.tilemapTiledJSON('map', 'assets/images/map.json');
   }
 
   create(){
     console.log('CREATE');
-    this.player = new Phaser.Physics.Matter.Sprite(this.matter.world, 0, 0, 'male', 'townsfolk_m_idle_1');
-    this.add.existing(this.player);
-    this.inputKeys = this.input.keyboard.addKeys({
+    const map = this.make.tilemap({key: 'map'});
+    const tileset = map.addTilesetImage('RPG Nature Tileset', 'tiles', 32, 32, 0, 0);
+    const layer1 = map.createLayer('Tile Layer 1', tileset, 0, 0);
+    const layer2 = map.createLayer('Tile Layer 2', tileset, 0, 0);
+
+    layer1.setCollisionByProperty({collides: true});
+    this.matter.world.convertTilemapLayer(layer1);
+
+    this.player = new Player({scene: this, x: 200, y: 120, texture: 'male', frame:'townsfolk_m_idle_1'});
+    const testPlayer = new Player({scene: this, x: 300, y: 100, texture: 'male', frame:'townsfolk_m_idle_1'});
+    this.player.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
       left: Phaser.Input.Keyboard.KeyCodes.A,
@@ -21,20 +33,6 @@ export default class MainScene extends Phaser.Scene{
   }
 
   update(){
-    const speed = 2.5;
-    let playerVelocity = new Phaser.Math.Vector2();
-    if(this.inputKeys.left.isDown) {
-      playerVelocity.x = -1;
-    } else if (this.inputKeys.right.isDown) {
-      playerVelocity.x = 1;
-    }
-    if (this.inputKeys.up.isDown) {
-      playerVelocity.y = -1;
-    } else if (this.inputKeys.down.isDown) {
-      playerVelocity.y = 1;
-    }
-    playerVelocity.normalize();
-    playerVelocity.scale(speed);
-    this.player.setVelocity(playerVelocity.x, playerVelocity.y);
+    this.player.update();
   }
 }
