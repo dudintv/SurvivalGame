@@ -29,9 +29,470 @@
          "width":16,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":3,
+         "name":"Resources",
+         "objects":[
+                {
+                 "gid":21,
+                 "height":32,
+                 "id":2,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.8
+                        }],
+                 "rotation":0,
+                 "type":"tree",
+                 "visible":true,
+                 "width":32,
+                 "x":71.1621621621622,
+                 "y":238.972972972973
+                }, 
+                {
+                 "gid":21,
+                 "height":32,
+                 "id":3,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.8
+                        }],
+                 "rotation":0,
+                 "type":"tree",
+                 "visible":true,
+                 "width":32,
+                 "x":111.702702702703,
+                 "y":221.405405405405
+                }, 
+                {
+                 "gid":21,
+                 "height":32,
+                 "id":4,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.8
+                        }],
+                 "rotation":0,
+                 "type":"tree",
+                 "visible":true,
+                 "width":32,
+                 "x":148.864864864865,
+                 "y":163.297297297297
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":5,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":100.216216216216,
+                 "y":255.864864864865
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":6,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":50.8918918918919,
+                 "y":270.054054054054
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":7,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":71.1621621621622,
+                 "y":284.243243243243
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":8,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":116.432432432432,
+                 "y":318.027027027027
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":9,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":256.972972972973,
+                 "y":386.27027027027
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":10,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":284.675675675676,
+                 "y":399.783783783784
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":11,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":392.108108108108,
+                 "y":388.972972972973
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":12,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":428.594594594595,
+                 "y":378.162162162162
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":13,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":413.054054054054,
+                 "y":422.756756756757
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":14,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":344.135135135135,
+                 "y":134.918918918919
+                }, 
+                {
+                 "gid":22,
+                 "height":32,
+                 "id":15,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"bush",
+                 "visible":true,
+                 "width":32,
+                 "x":359,
+                 "y":99.1081081081081
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":16,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":223.189189189189,
+                 "y":128.837837837838
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":17,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":269.810810810811,
+                 "y":116.675675675676
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":18,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":249.540540540541,
+                 "y":166.675675675676
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":19,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":294.135135135135,
+                 "y":188.972972972973
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":20,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":346.837837837838,
+                 "y":217.351351351351
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":21,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":352.918918918919,
+                 "y":253.162162162162
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":22,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":368.459459459459,
+                 "y":231.540540540541
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":23,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":298.864864864865,
+                 "y":457.891891891892
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":24,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":201.567567567568,
+                 "y":428.162162162162
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":26,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":231.972972972973,
+                 "y":449.783783783784
+                }, 
+                {
+                 "gid":23,
+                 "height":32,
+                 "id":27,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "type":"rock",
+                 "visible":true,
+                 "width":32,
+                 "x":134.675675675676,
+                 "y":449.783783783784
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":3,
- "nextobjectid":1,
+ "nextlayerid":4,
+ "nextobjectid":30,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.2",
@@ -50,11 +511,40 @@
          "tileheight":32,
          "tiles":[
                 {
+                 "id":20,
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.8
+                        }],
+                 "type":"tree"
+                }, 
+                {
+                 "id":21,
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "type":"bush"
+                }, 
+                {
+                 "id":22,
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "type":"rock"
+                }, 
+                {
                  "id":65,
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -97,7 +587,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -129,7 +618,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":3,
                      "name":"",
                      "objects":[
                             {
@@ -172,7 +660,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -204,7 +691,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -236,7 +722,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -268,7 +753,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -300,7 +784,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -332,7 +815,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -364,7 +846,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -407,7 +888,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -439,7 +919,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
