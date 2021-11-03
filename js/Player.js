@@ -4,6 +4,12 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     super(scene.matter.world, x, y, texture, frame);
     this.scene.add.existing(this);
 
+    // weapon
+    this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 50, 50, 'items', 162);
+    this.spriteWeapon.setOrigin(0.25, 0.75);
+    this.spriteWeapon.setScale(0.8);
+    this.scene.add.existing(this.spriteWeapon);
+
     const {Body, Bodies} = Phaser.Physics.Matter.Matter;
     const playerCollider = Bodies.circle(this.x, this.y, 12, {isSensor: false, label: 'playerCollider'});
     const playerSensor = Bodies.circle(this.x, this.y, 24, {isSensor: true, label: 'playerSensor'});
@@ -13,11 +19,14 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     });
     this.setExistingBody(compoundBody);
     this.setFixedRotation();
+
+    this.scene.input.on('pointermove', pointer => this.setFlipX(pointer.worldX < this.x));
   }
 
   static preload(scene){
     scene.load.atlas('male', 'assets/images/male.png', 'assets/images/male_atlas.json');
     scene.load.animation('male_anim', 'assets/images/male_anim.json');
+    scene.load.spritesheet('items', 'assets/images/items.png', { frameWidth: 32, frameHeight: 32 });
   }
 
   get velocity(){
@@ -47,5 +56,28 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     } else {
       this.anims.play('male_idle', true);
     }
+
+    // weapon
+    this.spriteWeapon.setPosition(this.x, this.y);
+    this.weaponRotate();
+  }
+
+  weaponRotate(){
+    const pointer = this.scene.input.activePointer;
+    if (pointer.isDown) {
+      this.weaponRotation += 6;
+    } else {
+      this.weaponRotation = 0;
+    }
+    if (this.weaponRotation > 100) {
+      this.weaponRotation = 0;
+    }
+
+    if (this.flipX) {
+      this.spriteWeapon.setAngle(-this.weaponRotation - 90);
+    } else {
+      this.spriteWeapon.setAngle(this.weaponRotation);
+    }
+
   }
 }
