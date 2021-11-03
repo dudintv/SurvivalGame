@@ -13,13 +13,12 @@ const config = {
       matter: {
         debug: true,
         gravity: {y:0},
-
       }
   },
   plugins: {
     scene: [
       {
-        plugin: PhaserMatterCollisionPlugin,
+        plugin: PhaserMatterCollisionPlugin.default,
         key: 'matterCollision',
         mapping: 'matterCollision',
       }

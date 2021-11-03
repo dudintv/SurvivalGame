@@ -27,8 +27,8 @@ export default class MainScene extends Phaser.Scene{
 
     this.addResources();
 
-    this.player = new Player({scene: this, x: 200, y: 120, texture: 'male', frame:'townsfolk_m_idle_1'});
-    const testPlayer = new Player({scene: this, x: 300, y: 100, texture: 'male', frame:'townsfolk_m_idle_1'});
+    this.player = new Player({scene: this, x: 220, y: 180, texture: 'male', frame:'townsfolk_m_idle_1'});
+    const testPlayer = new Player({scene: this, x: 330, y: 80, texture: 'male', frame:'townsfolk_m_idle_1'});
     this.player.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
