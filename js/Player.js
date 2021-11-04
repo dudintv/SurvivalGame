@@ -72,6 +72,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
       this.weaponRotation = 0;
     }
     if (this.weaponRotation > 100) {
+      this.whackStuff();
       this.weaponRotation = 0;
     }
 
@@ -100,6 +101,16 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         this.touching = this.touching.filter(gameObject => gameObject !== eventData.gameObjectB);
         console.log(this.touching.length);
       },
+    });
+  }
+
+  whackStuff() {
+    this.touching = this.touching.filter(gameObject => gameObject.hit && !gameObject.isDead);
+    this.touching.forEach(gameObject => {
+      gameObject.hit();
+      if (gameObject.isDead) {
+        gameObject.destroy();
+      }
     });
   }
 }
