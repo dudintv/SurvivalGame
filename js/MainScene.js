@@ -1,14 +1,17 @@
 import Player from "./Player.js";
 import Resource from "./Resource.js";
+import Enemy from "./Enemy.js";
 
 export default class MainScene extends Phaser.Scene{
   constructor(){
     super("MainScene");
+    this.enemies = [];
   }
 
   preload(){
     console.log('PRELOAD');
     Player.preload(this);
+    Enemy.preload(this);
     Resource.preload(this);
     this.load.image('tiles', 'assets/images/RPG Nature Tileset.png');
     this.load.tilemapTiledJSON('map', 'assets/images/map.json');
@@ -27,8 +30,7 @@ export default class MainScene extends Phaser.Scene{
 
     this.addResources();
 
-    this.player = new Player({scene: this, x: 220, y: 180, texture: 'male', frame:'townsfolk_m_idle_1'});
-    const testPlayer = new Player({scene: this, x: 330, y: 80, texture: 'male', frame:'townsfolk_m_idle_1'});
+    this.player = new Player({scene: this, x: 260, y: 250, texture: 'male', frame:'townsfolk_m_idle_1'});
     this.player.inputKeys = this.input.keyboard.addKeys({
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
@@ -38,13 +40,20 @@ export default class MainScene extends Phaser.Scene{
   }
 
   addResources(){
-    const resources = this.map.getObjectLayer('Resources');
-    resources.objects.forEach(resource => {
+    const resourcesLayer = this.map.getObjectLayer('Resources');
+    resourcesLayer.objects.forEach(resource => {
       const item = new Resource({ scene: this, resource });
+    });
+
+    const enemiesLayer = this.map.getObjectLayer('Enemies');
+    enemiesLayer.objects.forEach(enemy => {
+      const newEnemy = new Enemy({ scene: this, enemy });
+      this.enemies.push(newEnemy);
     });
   }
 
   update(){
+    this.enemies.forEach(enemy => enemy.update());
     this.player.update();
   }
 }

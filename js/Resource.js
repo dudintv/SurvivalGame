@@ -1,6 +1,6 @@
-import DropItem from "./DropItem.js";
+import MatterEntity from "./MatterEntity.js";
 
-export default class Resource extends Phaser.Physics.Matter.Sprite {
+export default class Resource extends MatterEntity {
   static preload(scene){
     scene.load.atlas('resources', 'assets/images/resources.png', 'assets/images/resources_atlas.json');
 
@@ -22,68 +22,18 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
   }
 
   constructor(data){
-    const {scene, resource} = data;
-    super(scene.matter.world, resource.x, resource.y, 'resources', resource.type);
-    this.scene.add.existing(this);
+    const { scene, resource } = data;
+    const drops = JSON.parse(resource.properties.find(p=>p.name==='drops').value);
+    const depth = resource.properties.find(p=>p.name==='depth').value;
+    super({scene, x: resource.x, y: resource.y, texture: 'resources', frame: resource.type, name: resource.type, drops, depth, health: 5});
 
     const { Bodies } = Phaser.Physics.Matter.Matter;
     const yOrigin = resource.properties.find(p => p.name === 'yOrigin').value;
-    this.drops = JSON.parse(resource.properties.find(p=>p.name==='drops').value);
-    this.name = resource.type;
-    this.health = 5;
-    this.x += this.width/2;
-    this.y -= this.height/2;
+
     this.y += this.height*(yOrigin - 0.5);
     const circleCollider = Bodies.circle(this.x, this.y, 12, { isSensor: false, label: 'collider' });
     this.setExistingBody(circleCollider);
     this.setStatic(true);
     this.setOrigin(0.5, yOrigin);
-
-    this.setupSounds();
-  }
-
-  setupSounds(){
-    this.currentSoundIndex = 0;
-    this.sounds = []
-    if (this.name === 'bush') {
-      const bushSound = this.scene.sound.add('bush');
-      this.sounds.push(bushSound);
-      this.destroySound = bushSound;
-    }
-    if (this.name === 'tree') {
-      this.sounds.push(this.scene.sound.add('tree1'));
-      this.sounds.push(this.scene.sound.add('tree2'));
-      this.sounds.push(this.scene.sound.add('tree3'));
-      this.destroySound = this.scene.sound.add('tree-fall');
-    }
-    if (this.name === 'rock') {
-      this.sounds.push(this.scene.sound.add('rock1'));
-      this.sounds.push(this.scene.sound.add('rock2'));
-      this.sounds.push(this.scene.sound.add('rock3'));
-      this.sounds.push(this.scene.sound.add('rock4'));
-      this.destroySound = this.scene.sound.add('rock-break');
-    }
-  }
-
-  get isDead() {
-    return this.health <= 0;
-  }
-
-  hit() {
-    this.health--;
-    if (this.sounds.length > 0 && this.destroySound) {
-      if (this.isDead) {
-        this.destroySound.play();
-        this.drop();
-      } else {
-        this.sounds[this.currentSoundIndex++].play();
-        if (this.currentSoundIndex >= this.sounds.length) this.currentSoundIndex = 0;
-      }
-    }
-    // console.log(`Hitting: ${this.name} Health: ${this.health}`)
-  }
-
-  drop() {
-    this.drops.forEach(drop => new DropItem({scene: this.scene, x: this.x, y: this.y, frame: drop}));
   }
 }
