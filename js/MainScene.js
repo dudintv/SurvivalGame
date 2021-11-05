@@ -13,7 +13,7 @@ export default class MainScene extends Phaser.Scene{
     Player.preload(this);
     Enemy.preload(this);
     Resource.preload(this);
-    this.load.image('tiles', 'assets/images/RPG Nature Tileset.png');
+    this.load.image('tiles', 'assets/images/RPG Nature Tileset--extruded.png');
     this.load.tilemapTiledJSON('map', 'assets/images/map.json');
   }
 
@@ -21,7 +21,7 @@ export default class MainScene extends Phaser.Scene{
     console.log('CREATE');
     const map = this.make.tilemap({key: 'map'});
     this.map = map;
-    const tileset = map.addTilesetImage('RPG Nature Tileset', 'tiles', 32, 32, 0, 0);
+    const tileset = map.addTilesetImage('RPG Nature Tileset', 'tiles', 32, 32, 1, 2);
     const layer1 = map.createLayer('Tile Layer 1', tileset, 0, 0);
     const layer2 = map.createLayer('Tile Layer 2', tileset, 0, 0);
 

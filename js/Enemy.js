@@ -68,6 +68,7 @@ export default class Enemy extends MatterEntity {
         }
       } else {
         if(this.attackTimer == null) {
+          this.attack(this.attacking);
           this.attackTimer = window.setInterval(this.attack, 800, this.attacking);
         }
       }
