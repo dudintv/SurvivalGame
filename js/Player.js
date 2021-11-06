@@ -100,7 +100,6 @@ export default class Player extends MatterEntity {
       callback: eventData => {
         if (eventData.bodyB.isSensor) return;
         this.touching.push(eventData.gameObjectB);
-        console.log(this.touching.length, eventData.gameObjectB.name);
       },
     });
 
